@@ -1,36 +1,31 @@
 # web port
 server:
-  port: ${server.port}
-  #port: 8081
+  port: 8081
 
 # log config
 logging:
   config: classpath:logback.xml
-  path: ${data.path}/applogs/executor/jobhandler
-  #path: ./data/applogs/executor/jobhandler
+  path: ./data/applogs/executor/jobhandler
 
 datax:
   job:
     admin:
       ### datax admin address list, such as "http://address" or "http://address01,http://address02"
-      #addresses: http://127.0.0.1:8080
-      addresses: http://127.0.0.1:${datax.admin.port}
+      addresses: http://127.0.0.1:8080
     executor:
       appname: datax-executor
       ip:
-      #port: 9999
-      port: ${executor.port:9999}
+      port: 9999
       ### job log path
-      #logpath: ./data/applogs/executor/jobhandler
-      logpath: ${data.path}/applogs/executor/jobhandler
+      logpath: ./data/applogs/executor/jobhandler
       ### job log retention days
       logretentiondays: 30
     ### job, access token
     accessToken:
-
+  #执行器日志
   executor:
     #jsonpath: D:\\temp\\executor\\json\\
-    jsonpath: ${json.path}
-
+    jsonpath: F:\github-projects\datax-web\temp\json
+  #datax的python脚本位置
   #pypath: F:\tools\datax\bin\datax.py
-  pypath: ${python.path}
+  pypath: D:\datax\bin\datax.py
